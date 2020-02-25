@@ -1,5 +1,10 @@
 function getUrl() {
-    return fetch('url.json')
+    const fetchOptions = {
+        headers: {
+            'Cache-Control': 'no-cache'
+        }
+    };
+    return fetch('url.json', fetchOptions)
         .then(res => {
             if (!res.ok) {
                 throw new Error(`${res.status} ${res.statusText}`);

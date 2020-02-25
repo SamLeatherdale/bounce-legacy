@@ -17,6 +17,6 @@
 		<div id="status"></div>
 		<button type="button" id="go">Go</button>
 
-		<script src="client.js"></script>
+		<script src="client.js?v=<?php echo microtime(true); ?>"></script>
 	</body>
 </html>
