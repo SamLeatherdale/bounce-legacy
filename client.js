@@ -10,12 +10,14 @@ function getUrl() {
 
 function bounce() {
     const status = document.getElementById('status');
+    const button = document.getElementById('go');
     getUrl().then(res => {
         const url = res.url;
-        status.innerText = `Redirecting to ${url}`;
-        setTimeout(() => {
+        status.innerText = `Button redirects to ${url}`;
+        button.onclick = () => {
             window.location = url;
-        }, 2000);
+        }
+        
     }).catch((e) => {
         status.innerText = `${e.message}`;
     })
